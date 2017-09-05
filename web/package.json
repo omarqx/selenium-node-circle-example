@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "dependencies": {
+    "mocha": "^3.5.0",
+    "selenium-webdriver": "^3.5.0",
+    "todomvc-app-css": "^2.0.1",
+    "todomvc-common": "^1.0.1"
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.0.0"
+  }
+}

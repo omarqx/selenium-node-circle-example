@@ -1,0 +1,29 @@
+
+selenium-hub:
+  container_name: hub
+  image: selenium/standalone-firefox
+  privileged: true
+  ports:
+    - "4444:4444"
+  expose:
+    - "4444"
+
+web:
+  container_name: web
+  build: ./web
+  ports:
+    - "8080:80"
+  expose:
+    - "8080"
+
+test: 
+  container_name: test
+  build: ./webtest
+  volumes:
+    - "./webtest:/src"
+  links:
+    - selenium-hub:hub
+    - web:web
+  command:  npm t
+  
+
